@@ -1,0 +1,425 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.section {
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #000000;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #333333;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Advanced Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    color: #FF0000; /* Red text on hover */
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+    color: #FF0000; /* Red text on hover */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 250px;
+        height: 100vh;
+        background-color: #333;
+        padding-top: 60px;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0; /* Slide in from the right */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Overlay for clicking outside the menu */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}
+/* Additional Styling */
+#home {
+    background-color: whitesmoke; /* Gradient using red and black */
+    color: #FFFFFF; /* White text for contrast */
+}
+
+#home h1 {
+    font-size: 4rem;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+#home p {
+    font-size: 1.5rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#about {
+    background-color: #FFFFFF; /* White background */
+}
+
+/* Services Section Styles */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: #FFFFFF; /* White background */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000; /* Black text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #000000; /* Red background on hover */
+    color: #FFFFFF; /* White text on hover */
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #1f1f1f; /* Red icon */
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #FFFFFF; /* White icon on hover */
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #666666; /* Gray text */
+    transition: color 0.3s ease;
+}
+
+.service-card:hover p {
+    color: #FFFFFF; /* White text on hover */
+}
+
+
+/* Contact Form Styles */
+.contact-form {
+    width: 800px; /* Adjusted width */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #FFFFFF; /* White background */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #000000; /* Black text for labels */
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #E0E0E0; /* Light gray border */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #F5F5F5; /* Light gray background */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #FF0000; /* Red border on focus */
+    outline: none;
+    background-color: #FFFFFF; /* White background on focus */
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.3); /* Red shadow on focus */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Button Styling */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    color: #FFFFFF; /* White text */
+    background-color: #FF0000; /* Red background */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.button:hover {
+    background-color: #CC0000; /* Darker red on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.3); /* Red shadow on hover */
+}
+
+/* Additional Hover Effects */
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: #FF0000; /* Red border on hover */
+    background-color: #FFFFFF; /* White background on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+    }
+
+    .button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.footer-section.about h2,
+.footer-section.links h2,
+.footer-section.social h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #FF0000; /* Red text for headings */
+}
+
+.footer-section.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #CCCCCC; /* Light gray text */
+}
+
+.footer-section.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section.links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section.links ul li a {
+    color: #CCCCCC; /* Light gray text */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section.links ul li a:hover {
+    color: #FF0000; /* Red text on hover */
+}
+
+.footer-section.social .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-section.social .social-links a {
+    color: #CCCCCC; /* Light gray text */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section.social .social-links a:hover {
+    color: #FF0000; /* Red text on hover */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #333333; /* Dark gray border */
+    font-size: 0.9rem;
+    color: #CCCCCC; /* Light gray text */
+}
